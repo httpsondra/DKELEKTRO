@@ -11,16 +11,11 @@ const pastels = [
 
 export function WhyUs() {
   return (
-    <section id="proc-my" className="section" aria-labelledby="why-title">
+    <section id="proc-my" className="section" aria-label="Proč D&K">
       <div className="shell">
         <div className="max-w-3xl">
           <Reveal>
-            <h2 id="why-title" className="h2">
-              Elektrikáři s <em>férovým jednáním</em> a dlouholetými zkušenostmi.
-            </h2>
-          </Reveal>
-          <Reveal delay={70}>
-            <p className="measure mt-5 text-[var(--color-muted)]">
+            <p className="measure text-[1.05rem] leading-relaxed text-[var(--color-body)]">
               Drobné i kompletní elektroinstalace zvládáme od návrhu po předání —
               čistě, bezpečně a s ohledem na detail. Dnes se navíc soustředíme na
               chytré domácnosti a fotovoltaiku.

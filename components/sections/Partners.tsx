@@ -4,21 +4,21 @@ import { Reveal } from "@/components/ui/Reveal";
 export function Partners() {
   const slots = [...partners, { name: "Vaše značka", note: "", placeholder: true }];
   return (
-    <section className="section-tight" aria-label="Partneři a spolupráce">
+    <section className="pb-12 pt-4 sm:pt-6" aria-label="Partneři a spolupráce">
       <div className="shell">
         <Reveal className="text-center">
           <p className="text-[0.95rem] text-[var(--color-muted)]">
             Na vybraných řešeních spolupracujeme s ověřenými partnery.
           </p>
         </Reveal>
-        <div className="mt-9 grid grid-cols-1 divide-y divide-[var(--color-line)] border-y border-[var(--color-line)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <div className="mt-6 grid grid-cols-1 divide-y divide-[var(--color-line)] border-y border-[var(--color-line)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {slots.map((p, i) => {
             const placeholder = (p as { placeholder?: boolean }).placeholder;
             return (
               <Reveal
                 key={p.name}
                 delay={i * 80}
-                className="flex flex-col items-center justify-center gap-1 px-6 py-9 text-center"
+                className="flex flex-col items-center justify-center gap-1 px-6 py-7 text-center"
               >
                 <span
                   className="h3-serif text-[1.25rem]"

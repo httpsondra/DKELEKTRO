@@ -37,3 +37,5 @@ DK-LOGO-*.jpg
 cable_video.mp4
 .claude/
 PRODUCT.md
+.vercel
+.env*

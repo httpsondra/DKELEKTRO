@@ -83,18 +83,8 @@ export function SmartHome() {
         <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
           {smartHomePackages.map((pkg, i) => (
             <Reveal key={pkg.name} delay={i * 80}>
-              <div
-                className="card card-hover flex h-full flex-col p-8"
-                style={
-                  pkg.featured
-                    ? { borderColor: "var(--color-pastel-green-fg)" }
-                    : undefined
-                }
-              >
-                <div className="flex items-center justify-between">
-                  <Icon name="smart-home" size={24} className="text-[var(--color-ink)]" weight="fill" />
-                  {pkg.featured && <span className="tag tag-green">Doporučeno</span>}
-                </div>
+              <div className="card card-hover flex h-full flex-col p-8">
+                <Icon name="smart-home" size={24} className="text-[var(--color-ink)]" weight="fill" />
                 <h3 className="mt-5 text-[1.1rem] font-semibold text-[var(--color-ink)]">
                   {pkg.name}
                 </h3>
