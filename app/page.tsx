@@ -3,11 +3,9 @@ import { Footer } from "@/components/site/Footer";
 import { CinematicHero } from "@/components/sections/CinematicHero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Partners } from "@/components/sections/Partners";
-import { WhyUs } from "@/components/sections/WhyUs";
 import { Services } from "@/components/sections/Services";
 import { SmartHome } from "@/components/sections/SmartHome";
 import { Fotovoltaika } from "@/components/sections/Fotovoltaika";
-import { Process } from "@/components/sections/Process";
 import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -24,11 +22,9 @@ export default function HomePage() {
       <main id="main">
         <CinematicHero />
         <TrustBar />
-        <WhyUs />
         <Services />
         <SmartHome />
         <Fotovoltaika />
-        <Process />
         <About />
         <Projects />
         <Partners />
