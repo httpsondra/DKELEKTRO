@@ -1,12 +1,13 @@
 import { Icon } from "./Icon";
 
 /**
- * Honest, editorial placeholder for real project photography/video.
- * Warm monochrome, hairline framed, faint blueprint grid for depth —
- * swap for <Image> when real assets arrive.
+ * Icon-forward visual panel used where real photography will later live.
+ * A large brand-accent icon on a hairline-framed, blueprint-textured surface —
+ * reads as an intentional graphic, not an empty "insert photo" slot. Swap for
+ * an <Image> when real assets arrive; keep `label` as the alt text.
  */
 export function MediaPlaceholder({
-  label = "Prostor pro fotografii realizace",
+  label = "D&K Elektro-instalace",
   tone = "light",
   icon = "plug",
   className = "",
@@ -21,6 +22,8 @@ export function MediaPlaceholder({
   const dark = tone === "dark";
   return (
     <div
+      role="img"
+      aria-label={label}
       className={`relative overflow-hidden rounded-[var(--radius-card)] ${className}`}
       style={{
         aspectRatio: ratio,
@@ -39,27 +42,26 @@ export function MediaPlaceholder({
             : "linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px)",
           backgroundSize: "40px 40px",
           maskImage:
-            "radial-gradient(120% 90% at 50% 0%,#000 25%,transparent 100%)",
+            "radial-gradient(120% 100% at 50% 0%,#000 20%,transparent 100%)",
         }}
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
+      <div className="absolute inset-0 grid place-items-center">
         <span
-          className="grid h-11 w-11 place-items-center rounded-[10px]"
+          aria-hidden
+          className="grid place-items-center rounded-full"
           style={{
-            background: dark ? "rgba(255,255,255,0.06)" : "var(--color-paper)",
-            border: dark
-              ? "1px solid rgba(255,255,255,0.1)"
-              : "1px solid var(--color-line)",
-            color: dark ? "rgba(255,255,255,0.75)" : "var(--color-muted)",
+            width: "clamp(4.5rem, 26%, 7rem)",
+            aspectRatio: "1",
+            background: dark
+              ? "rgba(143,191,172,0.12)"
+              : "color-mix(in srgb, var(--color-accent) 12%, transparent)",
+            color: dark ? "#8fbfac" : "var(--color-accent-ink)",
+            boxShadow: dark
+              ? "inset 0 0 0 1px rgba(143,191,172,0.22)"
+              : "inset 0 0 0 1px color-mix(in srgb, var(--color-accent) 22%, transparent)",
           }}
         >
-          <Icon name={icon} size={20} />
-        </span>
-        <span
-          className="font-mono text-[0.72rem] uppercase tracking-[0.1em]"
-          style={{ color: dark ? "rgba(255,255,255,0.62)" : "var(--color-muted)" }}
-        >
-          {label}
+          <Icon name={icon} size={40} weight="fill" />
         </span>
       </div>
     </div>

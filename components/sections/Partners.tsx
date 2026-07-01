@@ -2,7 +2,7 @@ import { partners } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function Partners() {
-  const slots = [...partners, { name: "Vaše značka", note: "", placeholder: true }];
+  const slots = partners;
   return (
     <section className="pb-12 pt-4 sm:pt-6" aria-label="Partneři a spolupráce">
       <div className="shell">
@@ -11,7 +11,7 @@ export function Partners() {
             Na vybraných řešeních spolupracujeme s ověřenými partnery.
           </p>
         </Reveal>
-        <div className="mt-6 grid grid-cols-1 divide-y divide-[var(--color-line)] border-y border-[var(--color-line)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <div className="mx-auto mt-6 grid max-w-3xl grid-cols-1 divide-y divide-[var(--color-line)] border-y border-[var(--color-line)] sm:grid-cols-2 sm:divide-x sm:divide-y-0">
           {slots.map((p, i) => {
             const placeholder = (p as { placeholder?: boolean }).placeholder;
             return (

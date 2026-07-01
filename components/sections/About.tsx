@@ -19,7 +19,7 @@ export function About() {
               />
             </Reveal>
             <Reveal delay={120}>
-              <MediaPlaceholder ratio="3 / 4" icon="route" label="Foto: náš tým v akci" />
+              <MediaPlaceholder ratio="3 / 4" icon="handshake" label="Foto: náš tým v akci" />
             </Reveal>
           </div>
 
