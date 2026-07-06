@@ -121,11 +121,14 @@ export type Service = {
   detail: string;
   highlights: string[];
   featured?: boolean;
+  /** Ilustrační foto (demo) — nahradit skutečnou fotografií realizace. */
+  image?: string;
 };
 
 export const services: Service[] = [
   {
     slug: "elektroinstalace",
+    image: "/images/sluzba-elektroinstalace.jpg",
     icon: "plug",
     title: "Kompletní elektroinstalace",
     excerpt:
@@ -141,6 +144,7 @@ export const services: Service[] = [
   },
   {
     slug: "opravy-a-domovni-instalace",
+    image: "/images/sluzba-opravy.jpg",
     icon: "wrench",
     title: "Opravy a domovní instalace",
     excerpt:
@@ -151,6 +155,7 @@ export const services: Service[] = [
   },
   {
     slug: "chytre-domacnosti",
+    image: "/images/sluzba-chytra-domacnost.jpg",
     icon: "smart-home",
     title: "Chytré domácnosti",
     excerpt:
@@ -166,6 +171,7 @@ export const services: Service[] = [
   },
   {
     slug: "fotovoltaika",
+    image: "/images/sluzba-fotovoltaika.jpg",
     icon: "solar",
     title: "Fotovoltaika",
     excerpt:
@@ -181,6 +187,7 @@ export const services: Service[] = [
   },
   {
     slug: "revize-a-servis",
+    image: "/images/sluzba-revize.jpg",
     icon: "shield-check",
     title: "Revize a servis",
     excerpt:
@@ -191,6 +198,7 @@ export const services: Service[] = [
   },
   {
     slug: "mereni-osvetleni",
+    image: "/images/sluzba-mereni-osvetleni.jpg",
     icon: "light",
     title: "Měření osvětlení",
     excerpt:
@@ -219,6 +227,7 @@ export const services: Service[] = [
   },
   {
     slug: "zabezpecovaci-a-slaboproude-systemy",
+    image: "/images/sluzba-zabezpeceni.jpg",
     icon: "cctv",
     title: "Zabezpečovací a slaboproudé systémy",
     excerpt:
@@ -233,6 +242,7 @@ export const services: Service[] = [
   },
   {
     slug: "externi-sluzby",
+    image: "/images/sluzba-externi.jpg",
     icon: "factory",
     title: "Externí služby",
     excerpt:
@@ -307,9 +317,12 @@ export type Project = {
   category: "Elektroinstalace" | "Fotovoltaika" | "Chytré domácnosti";
   location?: string;
   excerpt: string;
+  /** Ilustrační foto (demo) — nahradit skutečnou fotografií z realizace. */
+  image?: string;
 };
 
-/** Real references named on the existing site. Photography to be added. */
+/** Real references named on the existing site. Photography to be added —
+ *  current images are illustrative demo visuals, not photos of these jobs. */
 export const projects: Project[] = [
   {
     slug: "rozvody-po-zdech-atelier",
@@ -317,6 +330,7 @@ export const projects: Project[] = [
     category: "Elektroinstalace",
     location: "Ateliér",
     excerpt: "Realizace povrchové elektroinstalace v ateliéru.",
+    image: "/images/realizace-rozvody-atelier.jpg",
   },
   {
     slug: "fotovoltaika-rd-uhrineves",
@@ -324,6 +338,7 @@ export const projects: Project[] = [
     category: "Fotovoltaika",
     location: "Praha – Uhříněves",
     excerpt: "Instalace fotovoltaiky na rodinném domě.",
+    image: "/images/realizace-fve-uhrineves.jpg",
   },
   {
     slug: "fve-topelec",
@@ -331,6 +346,7 @@ export const projects: Project[] = [
     category: "Fotovoltaika",
     location: "Topělec",
     excerpt: "Realizace fotovoltaiky na bobrovce v Topělci.",
+    image: "/images/realizace-fve-topelec.jpg",
   },
 ];
 

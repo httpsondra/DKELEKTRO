@@ -66,8 +66,10 @@ Není potřeba sahat do komponent.
 Podle zadání nejsou žádná čísla ani recenze vymyšlené. Tato místa jsou
 elegantně připravená na reálné podklady:
 
-- **Fotografie realizací** — komponenta `MediaPlaceholder` (hero, služby,
-  fotogalerie, o nás). Stačí nahradit za `next/image`.
+- **Fotografie realizací** — aktuálně **ilustrační demo fotografie**
+  (stock, Unsplash) v `public/images/`, aby klient viděl potenciál hotového
+  webu. Nejsou to fotky skutečných realizací D&K — před ostrým spuštěním je
+  nahraďte reálnými snímky (stejné názvy souborů, žádná změna kódu).
 - **Recenze** — sekce „Reference“ je honest empty-state ve stylu Google recenzí.
 - **Čísla** (roky, hodnocení Google) — trust strip používá pouze doložitelná
   tvrzení z původní prezentace; číselná pole jsou připravena pro `CountUp`

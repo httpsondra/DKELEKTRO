@@ -52,7 +52,8 @@ export function Fotovoltaika() {
             <MediaPlaceholder
               ratio="1 / 1"
               icon="solar"
-              label="Prostor pro fotografii instalace fotovoltaiky"
+              label="Fotovoltaické panely na střeše — ilustrační foto"
+              src="/images/sluzba-fotovoltaika.jpg"
             />
           </Reveal>
         </div>

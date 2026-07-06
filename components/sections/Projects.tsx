@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { projects, projectFilters } from "@/lib/data";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
@@ -63,20 +64,32 @@ export function Projects() {
             <Reveal key={p.slug} delay={(i % 3) * 70}>
               <article className="group card card-hover overflow-hidden">
                 <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-bone)]">
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.03]"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px)",
-                      backgroundSize: "34px 34px",
-                    }}
-                  />
+                  {p.image ? (
+                    <Image
+                      src={p.image}
+                      alt={`${p.title} — ilustrační foto`}
+                      fill
+                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <>
+                      <div
+                        aria-hidden
+                        className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.03]"
+                        style={{
+                          backgroundImage:
+                            "linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px)",
+                          backgroundSize: "34px 34px",
+                        }}
+                      />
+                      <span className="absolute inset-0 grid place-items-center text-[var(--color-faint)]">
+                        <Icon name={iconFor[p.category]} size={36} />
+                      </span>
+                    </>
+                  )}
                   <span className={`tag ${tagFor[p.category]} absolute left-4 top-4`}>
                     {p.category}
-                  </span>
-                  <span className="absolute inset-0 grid place-items-center text-[var(--color-faint)]">
-                    <Icon name={iconFor[p.category]} size={36} />
                   </span>
                 </div>
                 <div className="border-t border-[var(--color-line)] p-6">

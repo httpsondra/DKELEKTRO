@@ -102,7 +102,13 @@ export default async function ServicePage({
                     </a>
                   </div>
                 </div>
-                <MediaPlaceholder ratio="4 / 3" icon={s.icon} label="Prostor pro fotografii realizace" />
+                <MediaPlaceholder
+                  ratio="4 / 3"
+                  icon={s.icon}
+                  label={`${s.title} — ilustrační foto`}
+                  src={s.image}
+                  priority
+                />
               </div>
             </div>
           </section>

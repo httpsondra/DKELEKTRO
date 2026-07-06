@@ -14,12 +14,18 @@ export function About() {
               <MediaPlaceholder
                 ratio="3 / 4"
                 icon="experience"
-                label="Foto: Vlastimil Dufek"
+                label="Elektrikář při instalaci rozvodů — ilustrační foto"
+                src="/images/o-nas-elektrikar.jpg"
                 className="translate-y-4"
               />
             </Reveal>
             <Reveal delay={120}>
-              <MediaPlaceholder ratio="3 / 4" icon="handshake" label="Foto: náš tým v akci" />
+              <MediaPlaceholder
+                ratio="3 / 4"
+                icon="handshake"
+                label="Příprava projektu elektroinstalace — ilustrační foto"
+                src="/images/o-nas-projekt.jpg"
+              />
             </Reveal>
           </div>
 

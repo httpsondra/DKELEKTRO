@@ -648,9 +648,6 @@
     margin-inline: auto;
     aspect-ratio: 16 / 10;
   }
-  .cine-cap {
-    display: none;
-  }
 
   .cine-wrap[data-cine="on"] {
     height: 210vh;
@@ -702,11 +699,6 @@
     transform: scale(var(--media-scale, 0.9));
     clip-path: inset(var(--media-clip, 28%) round var(--media-radius, 14px));
     will-change: transform, clip-path;
-  }
-  .cine-wrap[data-cine="on"] .cine-cap {
-    display: flex;
-    opacity: var(--cap-op, 0);
-    will-change: opacity;
   }
 
   /* Scroll-scrubbed cable video — fixed atmospheric backdrop. `multiply`

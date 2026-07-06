@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@/components/ui/Icon";
 
 const clamp = (n: number, a = 0, b = 1) => Math.min(Math.max(n, a), b);
@@ -37,7 +38,7 @@ export function CinematicHero() {
       // Phases spread across the whole scroll so the story keeps evolving.
       const eSub = smooth(clamp(p / 0.22)); // supporting copy leaves first
       const eMain = smooth(clamp((p - 0.06) / 0.66)); // type recedes, frame opens
-      const eEnd = smooth(clamp((p - 0.72) / 0.28)); // caption + handoff
+      const eEnd = smooth(clamp((p - 0.72) / 0.28)); // handoff to next section
 
       s.setProperty("--sub-op", (1 - eSub).toFixed(3));
       s.setProperty("--sub-y", `${(-20 * eSub).toFixed(2)}px`);
@@ -51,8 +52,6 @@ export function CinematicHero() {
       s.setProperty("--media-scale", (0.86 + 0.22 * eMain).toFixed(3));
       s.setProperty("--media-radius", `${(16 - 12 * eMain).toFixed(1)}px`);
 
-      // Caption resolves last, handing off to the next section.
-      s.setProperty("--cap-op", eEnd.toFixed(3));
     };
 
     const onScroll = () => {
@@ -85,25 +84,24 @@ export function CinematicHero() {
         {/* Visual — a glimpse that opens into a full-bleed frame */}
         <div className="cine-media relative w-full">
           <div className="cine-media-box overflow-hidden rounded-[14px] border border-[var(--color-line)] bg-[var(--color-bone)]">
+            <Image
+              src="/images/hero-obyvak.jpg"
+              alt="Moderní interiér s promyšleným osvětlením — ilustrační foto"
+              fill
+              priority
+              sizes="(min-width: 1280px) 1180px, 92vw"
+              className="object-cover"
+            />
+            {/* Soft halo scrim — keeps the headline legible while it overlaps
+                the photo in cinematic mode; invisible weight, no hard box. */}
             <div
               aria-hidden
               className="absolute inset-0"
               style={{
-                backgroundImage:
-                  "linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px)",
-                backgroundSize: "44px 44px",
-                maskImage: "radial-gradient(120% 90% at 50% 30%,#000 30%,transparent 100%)",
+                background:
+                  "radial-gradient(70% 64% at 50% 42%, rgba(251,251,250,.42), rgba(251,251,250,.14) 60%, rgba(251,251,250,0) 85%)",
               }}
             />
-            {/* Caption resolves as the frame fills (cinematic mode only) */}
-            <div className="cine-cap absolute bottom-5 left-5 items-center gap-2.5">
-              <span className="grid h-8 w-8 place-items-center rounded-[7px] border border-[var(--color-line)] bg-[var(--color-paper)] text-[var(--color-muted)]">
-                <Icon name="plug" size={16} />
-              </span>
-              <span className="font-mono text-[0.66rem] uppercase tracking-[0.12em] text-[var(--color-muted)]">
-                Prostor pro fotografii realizace
-              </span>
-            </div>
           </div>
         </div>
 

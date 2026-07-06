@@ -1,10 +1,11 @@
+import Image from "next/image";
 import { Icon } from "./Icon";
 
 /**
- * Icon-forward visual panel used where real photography will later live.
- * A large brand-accent icon on a hairline-framed, blueprint-textured surface —
- * reads as an intentional graphic, not an empty "insert photo" slot. Swap for
- * an <Image> when real assets arrive; keep `label` as the alt text.
+ * Visual panel: renders real photography when `src` is provided, otherwise an
+ * icon-forward panel (large brand-accent icon on a hairline-framed, blueprint-
+ * textured surface) that reads as an intentional graphic, not an empty slot.
+ * `label` doubles as the image alt text.
  */
 export function MediaPlaceholder({
   label = "D&K Elektro-instalace",
@@ -12,14 +13,41 @@ export function MediaPlaceholder({
   icon = "plug",
   className = "",
   ratio,
+  src,
+  priority = false,
 }: {
   label?: string;
   tone?: "light" | "dark";
   icon?: string;
   className?: string;
   ratio?: string;
+  src?: string;
+  /** Set for above-the-fold usage (LCP). */
+  priority?: boolean;
 }) {
   const dark = tone === "dark";
+  if (src) {
+    return (
+      <div
+        className={`relative overflow-hidden rounded-[var(--radius-card)] ${className}`}
+        style={{
+          aspectRatio: ratio,
+          border: dark
+            ? "1px solid rgba(255,255,255,0.08)"
+            : "1px solid var(--color-line)",
+        }}
+      >
+        <Image
+          src={src}
+          alt={label}
+          fill
+          priority={priority}
+          sizes="(min-width: 1024px) 45vw, 100vw"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
   return (
     <div
       role="img"
